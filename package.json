@@ -1,0 +1,25 @@
+{
+  "name": "desafio_ewally",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 100000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martins-wescley/desafio_ewally.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martins-wescley/desafio_ewally/issues"
+  },
+  "homepage": "https://github.com/martins-wescley/desafio_ewally#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1"
+  }
+}
