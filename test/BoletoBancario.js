@@ -4,54 +4,7 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('Boleto Bancário', () =>{
-    describe('Validar o retorno de uma linha digitável inválida', () =>{
-        it('1ª Linha Digitável', (done) =>{
-            let boleto = {
-                line: "23793380295022813380255006333300371210000100001"
-            }
-
-            chai.request('http://localhost:3333').post('/boleto')
-            .send(boleto)
-            .end((err, res) => {
-                res.should.have.status(400);
-                res.body.should.have.property('error').eql('Linha digitada é inválida');
-                done();
-            })
-        })
-
-        it('2ª Linha Digitável', (done) =>{
-            let boleto = {
-                line: "23783380295022813380255006333300371210000100000"
-            }
-
-            chai.request('http://localhost:3333').post('/boleto')
-            .send(boleto)
-            .end((err, res) => {
-                res.should.have.status(400);
-                res.body.should.have.property('error').eql('Linha digitada é inválida');
-                done();
-            })
-        })
-    });
-
-    describe('Validar o retorno de uma linha digitável com caracteres inválidos', () => {
-        it('Linha digitável com caracteres inválidos', (done) => {
-            let boleto = {
-                line: "2A783380295022813380255006333300371210000100000"
-            }
-
-            chai.request('http://localhost:3333').post('/boleto')
-            .send(boleto)
-            .end((err, res) => {
-                res.should.have.status(400);
-                res.body.should.have.property('error').eql('Caracteres inválidos');
-                done();
-            })
-
-        })
-    })
-
+describe('Boleto Bancário', () => {
     describe('Validar o retorno de uma linha digitável válida', () => {
         it('1ª Linha Digitável Válida', (done) =>{
             let boleto = {
