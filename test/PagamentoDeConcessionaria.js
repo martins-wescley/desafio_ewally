@@ -4,6 +4,9 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
+const urlBase = "http://localhost:3333";
+const endPoint = "/boleto";
+
 describe('Pagamento de Concessionária', () =>{
     describe('Validar o retorno de uma linha digitável válida', () =>{
         it('1ª Linha Digitável Válida', (done) => {
@@ -11,7 +14,7 @@ describe('Pagamento de Concessionária', () =>{
                 line: "826500000003500101102019801111171212406651960584"
             }
 
-            chai.request('http://localhost:3333').post('/boleto')
+            chai.request(urlBase).post(endPoint)
             .send(boleto)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -30,7 +33,7 @@ describe('Pagamento de Concessionária', () =>{
                 line: "827200000004937704242018906190301208002722180052"
             }
 
-            chai.request('http://localhost:3333').post('/boleto')
+            chai.request(urlBase).post(endPoint)
             .send(boleto)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -49,7 +52,7 @@ describe('Pagamento de Concessionária', () =>{
                 line: "848000000006199101622010803081581667671044397779"
             }
 
-            chai.request('http://localhost:3333').post('/boleto')
+            chai.request(urlBase).post(endPoint)
             .send(boleto)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -68,7 +71,7 @@ describe('Pagamento de Concessionária', () =>{
                 line: "899400000008600000010101955231622052718610138330"
             }
 
-            chai.request('http://localhost:3333').post('/boleto')
+            chai.request(urlBase).post(endPoint)
             .send(boleto)
             .end((err, res) => {
                 res.should.have.status(200);
